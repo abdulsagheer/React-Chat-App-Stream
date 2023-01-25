@@ -14,7 +14,7 @@ export async function userRoutes(app: FastifyInstance) {
 		async (req, res) => {
 			const { id, name, image } = req.body;
 			if (id == null || id === "" || name == null || name === "") {
-				return res.status(400).send;
+				return res.status(400).send();
 			}
 
 			const existingUsers = await streamChat.queryUsers({ id });
